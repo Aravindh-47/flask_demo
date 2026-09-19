@@ -6,8 +6,9 @@ pipeline {
                 sh '''
                     python3 -m venv venv
                     . venv/bin/activate
-                    pip install pytest
-                    pytest
+                    python3 -m ensurepip --upgrade
+                    python3 -m pip install pytest
+                    python3 -m pytest
                 '''
             }
         }
